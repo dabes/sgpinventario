@@ -1,0 +1,8 @@
+{
+  "database": {
+    "name": "localstorage",
+    "version": "1.0",
+    "description": "Banco de Dados local",
+    "size": 200000
+  }
+}
