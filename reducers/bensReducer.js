@@ -28,6 +28,7 @@ const bensReducer = (state = INITIAL_STATE_BEM, action) => {
   if (action.type == "FILTRAR") {
     state.dados.codigo = action.payload;
     state.selecionado = true;
+    state.dados.encontrado = false;
     return { ...state };
   } else {
     return { ...state };

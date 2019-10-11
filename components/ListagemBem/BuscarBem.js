@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { Card, CardItem, Item, Icon, Input, Button, Text } from "native-base";
 
@@ -21,8 +22,10 @@ class BuscarBem extends Component {
             <Input
               placeholder="Buscar Bem"
               keyboardType="numeric"
+              returnKeyType="send"
               onChangeText={text => this.setState({ dados: { codigo: text } })}
               value={this.state.dados.codigo}
+              onEndEditing={this._getbens}
             />
             <Button onPress={this.getbarcode} transparent>
               <Icon name="md-barcode" />
@@ -53,3 +56,14 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(BuscarBem);
+
+const styles = StyleSheet.create({
+  CardTitulo: {
+    paddingBottom: 0,
+    marginBottom: 0
+  },
+  CardContent: {
+    paddingTop: 0,
+    marginTop: 0
+  }
+});
