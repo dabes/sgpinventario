@@ -1,7 +1,13 @@
 import React from "react";
 import Setup from "./components/Menu";
 import * as Font from "expo-font";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator } from "react-native";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import bensReducer from "./reducers";
+
+const store = createStore(bensReducer);
+window.store = store;
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,9 +15,9 @@ export default class App extends React.Component {
     this.navigationOptions = {
       header: null
     };
-
     this.state = {
-      isReady: false
+      isReady: false,
+      bemselecionado: null
     };
   }
   componentWillMount = async () => {
@@ -26,6 +32,11 @@ export default class App extends React.Component {
   render() {
     if (!this.state.isReady) {
       return <ActivityIndicator />;
-    } else return <Setup />;
+    } else
+      return (
+        <Provider store={store}>
+          <Setup />
+        </Provider>
+      );
   }
 }
