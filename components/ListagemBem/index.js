@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, Button } from "native-base";
 import { connect } from "react-redux";
-import CardBem from "./cardBem";
+import CardBem from "./CardBem";
+import BuscarBem from "./BuscarBem";
 
 class ListagemBem extends Component {
   constructor(props) {
@@ -12,16 +13,7 @@ class ListagemBem extends Component {
   render() {
     return (
       <View>
-        <Button
-          tytle={"Lixo"}
-          onPress={() => {
-            codigo = this.state.codigo + 1;
-            this.setState({ codigo: codigo });
-            this.props.selecionaBem(codigo);
-          }}
-        >
-          <Text>{this.state.codigo}</Text>
-        </Button>
+        <BuscarBem />
         <CardBem />
       </View>
     );
