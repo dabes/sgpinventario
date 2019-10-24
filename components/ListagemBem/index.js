@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "native-base";
+import { View, Text, Button, Content } from "native-base";
 import { connect } from "react-redux";
 import CardBem from "./CardBem";
 import BuscarBem from "./BuscarBem";
@@ -12,10 +12,16 @@ class ListagemBem extends Component {
 
   render() {
     return (
-      <View>
+      <Content
+        contentContainerStyle={{
+          flex: 1,
+          justifyContent: "flex-start",
+          alignItems: "flex-start"
+        }}
+      >
         <BuscarBem />
         <CardBem />
-      </View>
+      </Content>
     );
   }
 }

@@ -28,7 +28,15 @@ const menu = [
   {
     name: "Listagem de Bens",
     route: (
-      <Content>
+      <Content
+        contentContainerStyle={{
+          flex: 1,
+
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          backgroundColor: "black"
+        }}
+      >
         <ListagemBem />
       </Content>
     ),
